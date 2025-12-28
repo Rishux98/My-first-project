@@ -1,79 +1,50 @@
-import React, { useState, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
-import './TransitionScreen.css' 
-import dropVideo from '../assets/drop.mp4'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
+import './TransitionScreen.css'; // This works here because they are neighbors!
+import castleVideo from '../assets/castle_lite.mp4'; 
 
 const TransitionScreen = () => {
-  const navigate = useNavigate();
-  const videoRef = useRef(null);
   const [showButton, setShowButton] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const navigate = useNavigate(); 
 
-  const handleVideoEnd = () => {
-    setShowButton(true);
-  };
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 2000); 
+    return () => clearTimeout(timer);
+  }, []);
 
-  const toggleSound = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-      setIsMuted(videoRef.current.muted);
-    }
-  };
-
-  const skipAnimation = () => {
-    navigate('/castle'); // Jumps straight to the Castle
+  const handleEnter = () => {
+    navigate('/castle'); 
   };
 
   return (
     <div className="transition-container">
-      
-      {/* 1. AUDIO TOGGLE (Top Right) */}
-      {!showButton && (
-        <button className="glass-btn sound-pos" onClick={toggleSound}>
-          {isMuted ? "🔇 UNMUTE" : "🔊 SOUND ON"}
-        </button>
-      )}
+      {/* LOCAL VIDEO BACKGROUND */}
+      <video 
+        className="background-video" 
+        src={castleVideo} 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+      />
 
-      {/* 2. SKIP BUTTON (Bottom Right) */}
-      {!showButton && (
-        <button className="glass-btn skip-pos" onClick={skipAnimation}>
-          SKIP ADVENTURE ⏭
-        </button>
-      )}
-
-   {/* YouTube Background: Fragment | Demon Slayer Infinity Castle */}
-      <div className="video-background">
-        <iframe 
-          src="https://www.youtube.com/embed/z6NI3gzLOh8?autoplay=1&mute=1&loop=1&playlist=z6NI3gzLOh8&controls=0&showinfo=0&rel=0&iv_load_policy=3&fs=0" 
-          title="Infinity Castle Edit"
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            width: '100vw',
-            height: '100vh',
-            transform: 'translate(-50%, -50%)',
-            objectFit: 'cover',
-            zIndex: '-1',
-            pointerEvents: 'none',
-          }}
-          frameBorder="0"
-          allow="autoplay; encrypted-media" 
-        ></iframe>
-      </div>
-      {showButton && (
-        <div className="overlay-content">
-          <h1>YOU HAVE FALLEN.</h1>
+      {/* OVERLAY CONTENT */}
+      <div className="overlay-content">
+        <h1>INFINITY CASTLE</h1>
+        
+        {showButton && (
           <button 
-            className="enter-castle-btn"
-            onClick={() => navigate('/castle')}
+            className="enter-castle-btn" 
+            onClick={handleEnter} 
           >
-            EXPLORE THE INFINITE CASTLE
+            Enter
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default TransitionScreen
+export default TransitionScreen;

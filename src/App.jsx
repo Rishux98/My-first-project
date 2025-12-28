@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="app-container">
       <Routes>
-        {/* Route 1: Home Page (The Hero Section) */}
+        {/* Route 1: Home Page */}
         <Route path="/" element={<Hero />} />
 
         {/* Route 2: The Video Drop */}
