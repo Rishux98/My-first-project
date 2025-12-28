@@ -1,0 +1,83 @@
+
+/* LIGHT MODE (Day / Human Era) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --card-bg: #f4f4f4;
+  --accent-color: #e63946; /* Rengoku Red */
+}
+
+/* DARK MODE (Night / Demon Era) */
+.dark-mode {
+  --bg-color: #121212;   /* Very dark grey, better than pure black */
+  --text-color: #ffffff;
+  --card-bg: #1e1e1e;
+  --accent-color: #ff9f1c; /* Zenitsu Orange/Yellow */
+}
+
+/* Apply variables to the body */
+body {
+  margin: 0;
+  padding: 0;
+  /* This allows the colors to switch based on the toggle */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  
+  /* Keep your font settings */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Smooth transition for the color change */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.app-container {
+  padding: 0; /* Change 50px to 0 */
+  margin: 0;
+  width: 100%;
+}
+.hero-section {
+  /* 1. Makes the section exactly the height of your screen */
+  height: 100vh; 
+  width: 100%;
+  
+  /* 2. "contain" forces the WHOLE image to fit inside the box */
+  background-image: url('./assets/nakime.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  /* 3. Fills the empty side bars with black so it looks seamless */
+  background-color: #000000; 
+  
+  /* 4. Keep your text centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  
+  /* 5. Clean up borders */
+  margin: 0;
+  padding: 0;
+  border-bottom: 4px solid #c74c3c;
+}
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.8); /* Red glow effect */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* This forces the main app wrapper to stretch fully */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  text-align: left; /* Optional: Resets text alignment */
+}
