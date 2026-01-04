@@ -3,18 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import ProCard from './ProCard'
 import './Castle.css' 
 
-// --- 1. IMPORT BACKGROUND & DEMONS (Existing) ---
 import castleBg from '../assets/castle_bg.jpg' 
 import muzanImg from '../assets/muzan2.jpg'
 import kokushiboImg from '../assets/kokushibo2.jpg'
 
-// --- 2. IMPORT THE NEW IMAGES ---
+
 import tanjiroImg from '../assets/tanjiro.jpg'
 import zenitsuImg from '../assets/zenitsu.jpg'
 import inosukeImg from '../assets/inosuke.jpg'
 import rengokuImg from '../assets/rengoku.jpg'
 
-// --- NEW DEMON IMPORTS ---
 import domaImg from '../assets/doma.png'
 import akazaImg from '../assets/akaza.jpg'
 import hantenguImg from '../assets/hantengu.jpg'
@@ -27,7 +25,7 @@ import enmuImg from '../assets/enmu.png'
 import ruiImg from '../assets/rui.png'
 import tamayoImg from '../assets/tamayo1.jpg'
 import yushiroImg from '../assets/yushiro.jpg'
-// --- HASHIRA IMPORTS ---
+
 import giyuImg from '../assets/giyu.jpg'
 import shinobuImg from '../assets/shinobu.jpg'
 import tengenImg from '../assets/tengen.jpg'
@@ -37,7 +35,6 @@ import obanaiImg from '../assets/obanai.jpg'
 import sanemiImg from '../assets/sanemi.jpg'
 import gyomeiImg from '../assets/gyomei.jpg'
 
-// --- NEW ADDITIONS ---
 import nezukoImg from '../assets/nezuko.jpg'
 import kagayaImg from '../assets/kagaya.png'
 import kanaoImg from '../assets/kanao.jpg'
@@ -47,9 +44,9 @@ const Castle = () => {
   const navigate = useNavigate(); 
   const [searchTerm, setSearchTerm] = useState("");
 
-  // --- 3. CHARACTER LIST ---
+  //  CHARACTER LIST 
   const characters = [
-    // --- MAIN SQUAD ---
+    //  MAIN SQUAD 
     { id: 1, name: "Tanjiro Kamado", role: "Sun Breathing ☀️", desc: "A kind-hearted boy with a hard head and a burning resolve.", color: "#e74c3c", type: "slayer", img: tanjiroImg },
     { id: 2, name: "Zenitsu Agatsuma", role: "Thunder Breathing ⚡", desc: "Cowardly while awake, but a god of speed when asleep.", color: "#f1c40f", type: "slayer", img: zenitsuImg },
     { id: 3, name: "Inosuke Hashibira", role: "Beast Breathing 🐗", desc: "A dual-wielding wild man raised by boars. Comin' through!", color: "#3498db", type: "slayer", img: inosukeImg },
@@ -63,10 +60,6 @@ const Castle = () => {
       img: kanaoImg
     },
     
-    // --- THE HASHIRAS ---
-    // ... inside characters array ...
-    
-    // Put Kagaya at the very top (before Tanjiro) or with Hashiras
     { 
       id: 99, 
       name: "Kagaya Ubuyashiki", 
@@ -76,14 +69,14 @@ const Castle = () => {
       type: "slayer", 
       img: kagayaImg 
     },
-    // Put Nezuko after Tanjiro/Inosuke
+    
     { 
       id: 401, 
       name: "Nezuko Kamado", 
       role: "The Chosen Demon 🎋", 
       desc: "Tanjiro's sister. She fights to protect humans and sleeps to recover.", 
       color: "#ff9ff3", 
-      type: "demon", // She gets the Demon badge but lives in the heroes list
+      type: "demon", 
       img: nezukoImg 
     },
     { id: 4, name: "Kyojuro Rengoku", role: "Flame Hashira 🔥", desc: "Set your heart ablaze! A warrior with unwavering spirit.", color: "#fb780dff", type: "slayer", img: rengokuImg },
@@ -97,9 +90,9 @@ const Castle = () => {
     { id: 12, name: "Gyomei Himejima", role: "Stone Hashira 📿", desc: "The strongest Hashira. A blind giant who prays before crushing heads.", color: "#95a5a6", type: "slayer", img: gyomeiImg }
   ];
 
-  // --- DEMON LIST ---
+  // DEMON LIST ---
   const demons = [
-// ... inside demons array ...
+
 
     
     
@@ -147,7 +140,7 @@ const Castle = () => {
       name: "Sakonji Urokodaki",
       role: "Former Water Hashira 👺",
       desc: "Tanjiro's master who wears a goblin mask. He taught Tanjiro the Water Breathing technique.",
-      color: "#3498db", // Water Blue
+      color: "#3498db",
       type: "slayer",
       img: urokodakiImg
     }
@@ -211,10 +204,10 @@ const Castle = () => {
         <footer className="castle-footer">
           <div className="footer-container">
             
-            {/* MAIN ROW (Everything is now in one row) */}
+      
             <div className="footer-top">
               
-              {/* 1. BRAND (Left Side) */}
+         
               <div className="footer-brand">
                 <div className="footer-logo">
                   <h3>⼕ INFINITE ARCHIVES</h3>
@@ -272,7 +265,7 @@ const Castle = () => {
               </div>
 
           
-              {/* 5. CREDITS (MOVED HERE TO THE RIGHT SIDE) */}
+       
               <div className="footer-credits-side">
                 <p className="forged-by">Forged By Rishav Raj</p>
                 <p className="made-in">Made in NIT Rourkela with Enthusiasm 💖</p>

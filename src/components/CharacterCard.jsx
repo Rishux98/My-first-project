@@ -1,7 +1,6 @@
-// src/components/CharacterCard.jsx
+
 import React from 'react';
 
-// We are using "props" here to make the card reusable
 const CharacterCard = ({ name, style, color }) => {
   const cardStyle = {
     border: `2px solid ${color}`,
@@ -9,7 +8,7 @@ const CharacterCard = ({ name, style, color }) => {
     padding: '20px',
     margin: '10px',
     backgroundColor: '#1e1e1e',
-    display: 'inline-block', // Keeps them side-by-side
+    display: 'inline-block',
     width: '200px'
   };
 

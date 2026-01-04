@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
-import './TransitionScreen.css'; // This works here because they are neighbors!
+import './TransitionScreen.css'; 
 import castleVideo from '../assets/castle_lite.mp4'; 
 
 const TransitionScreen = () => {

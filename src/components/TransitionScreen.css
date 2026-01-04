@@ -17,7 +17,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures video covers the whole screen */
+  object-fit: cover; 
   z-index: 0;
 }
 
@@ -41,7 +41,7 @@
   animation: fadeIn 2s ease-in;
 }
 
-/* (Keep your other button styles below...) */
+/* (Keep  other button styles below...) */
 .enter-castle-btn {
   padding: 20px 50px;
   font-size: 1.5rem;
@@ -83,7 +83,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensures video covers the whole screen */
+  object-fit: cover; 
   z-index: 0;
 }
 
@@ -107,7 +107,7 @@
   animation: fadeIn 2s ease-in;
 }
 
-/* (Keep your other button styles below...) */
+/* (Keep other button styles below...) */
 .enter-castle-btn {
   padding: 20px 50px;
   font-size: 1.5rem;
